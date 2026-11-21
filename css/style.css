@@ -4,8 +4,8 @@
 :root {
   --primary: #0f172a;        /* đen graphite */
   --primary-2: #1e293b;
-  --accent: #dc2626;          /* đỏ racing */
-  --accent-dark: #b91c1c;
+  --accent: #0a58ca;          /* Xanh dương chính */
+  --accent-dark: #084298;     /* Xanh dương đậm */
   --accent-soft: rgba(220, 38, 38, 0.1);
   --text: #111827;
   --text-muted: #6b7280;
