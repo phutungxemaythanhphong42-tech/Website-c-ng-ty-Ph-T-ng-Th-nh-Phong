@@ -150,12 +150,12 @@ ul { list-style: none; }
 .btn-sm { padding: 9px 18px; font-size: 13.5px; }
 .btn-outline {
   background: transparent;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #0f172a; /* Chữ màu đen xanh */
+  border: 2px solid #0f172a;
 }
 .btn-outline:hover {
-  background: #fff;
-  color: var(--accent);
+  background: #0f172a;
+  color: #fff;
   box-shadow: none;
 }
 .btn-light {
