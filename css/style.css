@@ -690,3 +690,50 @@ ul { list-style: none; }
   .footer-inner { grid-template-columns: 1fr; gap: 30px; }
   .contact-form { padding: 24px 20px; }
 }
+/* ===== DROPDOWN MENU (GIỐNG JOHN HENRY) ===== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Ẩn danh sách mục con đi */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 220px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+  z-index: 100;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  top: 100%; /* Hiện ngay bên dưới chữ Sản phẩm */
+  left: 0;
+  padding: 8px 0;
+}
+
+/* Hiện danh sách khi rê chuột vào chữ Sản phẩm */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Ghi đè giao diện cho các thẻ a bên trong menu con để xếp hàng dọc */
+.nav .dropdown-content a {
+  color: #0f172a !important;
+  padding: 12px 20px !important;
+  display: block !important; /* Ép xuống dòng */
+  font-weight: 600;
+  font-size: 15px;
+  position: static !important;
+  border-bottom: none !important;
+}
+
+/* Bỏ hiệu ứng gạch chân khi rê chuột (của menu chính) */
+.nav .dropdown-content a::after {
+  display: none !important; 
+}
+
+/* Đổi màu nền và màu chữ khi rê chuột vào từng mục con */
+.nav .dropdown-content a:hover {
+  background-color: #f1f5f9;
+  color: #0a58ca !important;
+}
