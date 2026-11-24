@@ -737,3 +737,64 @@ ul { list-style: none; }
   background-color: #f1f5f9;
   color: #0a58ca !important;
 }
+/* ===== CHI TIẾT SẢN PHẨM ===== */
+.product-detail-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.product-detail-info h3 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.specs-table {
+  width: 100%;
+  margin-bottom: 24px;
+  border-collapse: collapse;
+}
+
+.specs-table td {
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 15px;
+  color: #475569;
+}
+
+.compatible-vehicles h4 {
+  font-size: 16px;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.vehicle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vehicle-tags span {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #bae6fd;
+}
+
+/* Giao diện trên điện thoại */
+@media (max-width: 768px) {
+  .product-detail-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+}
