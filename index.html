@@ -1,580 +1,698 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phụ Tùng Thành Phong - Phụ Tùng Xe Máy & Tay Ga Chính Hãng</title>
-  <meta name="description" content="Công ty TNHH TM DV Phụ Tùng Thành Phong - Chuyên cung cấp phụ tùng xe gắn máy và xe tay ga chính hãng, giá sỉ tốt, giao hàng toàn quốc. Hotline 0986 633 732">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phụ Tùng Thành Phong</title>
+<meta name="description" content="Phụ tùng xe máy Thành Phong: bugi Bosch, dây curoa Lucas, lọc gió Lucas, nhông sên dĩa YBN, còi Bosch. Giá sỉ, giao hàng toàn quốc. Hotline 0909 611 148.">
+<link rel="icon" type="image/png" href="img/brand/tp.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout idea: cửa hàng phụ tùng, màu xanh navy và đỏ lấy từ logo TP, lưới sản phẩm và ô tra mã theo dòng xe làm trung tâm. */
+:root{
+  --navy-deep:#0a1b45;
+  --navy:#173a8c;
+  --red:#d3202b;
+  --red-dark:#b01720;
+  --steel:#eff2f8;
+  --line:#dce2ee;
+  --ink:#10192e;
+  --muted:#5a6579;
+  --paper:#ffffff;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid #f2a900;outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--red)}
+h1,h2,h3{text-wrap:balance;line-height:1.08}
+.disp{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em}
+.sec{padding:72px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.sec-head h2{font-family:var(--display);font-size:clamp(32px,4vw,46px);font-weight:800;text-transform:uppercase;color:var(--navy-deep)}
+.sec-head h2::after{content:"";display:block;width:56px;height:4px;background:var(--red);margin-top:10px}
+
+.announce{background:var(--navy-deep);color:#fff;font-size:13px;text-align:center;padding:9px 16px}
+.announce b{color:#ffd3d6;font-weight:600}
+
+header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:74px}
+.logo img{height:46px;width:auto}
+nav ul{display:flex;list-style:none;height:74px}
+nav li{display:flex}
+nav a.top{display:flex;align-items:center;padding:0 14px;font-size:13.5px;font-weight:600;text-transform:uppercase;letter-spacing:.05em;border-bottom:3px solid transparent}
+nav a.top:hover{color:var(--red);border-bottom-color:var(--red)}
+.tools{display:flex;align-items:center;gap:10px}
+.call{background:var(--red);color:#fff;padding:12px 18px;font-size:13.5px;font-weight:700;white-space:nowrap;letter-spacing:.03em}
+.call:hover{background:var(--red-dark)}
+.burger{display:none;background:#fff;border:1px solid var(--line);width:44px;height:44px;font-size:20px}
+
+.hero{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-8%;top:-30%;width:62%;height:160%;background:linear-gradient(115deg,transparent 0 44%,rgba(211,32,43,.9) 44% 49%,transparent 49% 53%,rgba(23,58,140,.9) 53% 100%);opacity:.55;pointer-events:none}
+.hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:52px;padding-bottom:52px}
+.hero .eyebrow{color:#ffb9bd}
+.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(46px,6.4vw,84px);margin:12px 0 18px}
+.hero h1 em{font-style:normal;color:#ff5a63}
+.hero p{color:#cdd6ec;max-width:48ch;font-size:16.5px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-block;padding:14px 26px;font-weight:700;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;border:2px solid var(--red);background:var(--red);color:#fff;transition:.15s;text-align:center}
+.btn:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.btn.ghost{background:transparent;border-color:#8fa3d6;color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--navy-deep);border-color:#fff}
+.btn.navy{background:var(--navy);border-color:var(--navy)}
+.btn.navy:hover{background:var(--navy-deep);border-color:var(--navy-deep)}
+.btn.line{background:#fff;color:var(--navy-deep);border-color:var(--navy-deep)}
+.btn.line:hover{background:var(--navy-deep);color:#fff}
+.stats{display:flex;gap:34px;margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);flex-wrap:wrap}
+.stats b{display:block;font-family:var(--display);font-size:40px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.stats span{font-size:12px;color:#a9b7de;text-transform:uppercase;letter-spacing:.09em}
+.collage{display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:1fr 1fr;gap:10px;height:500px}
+.collage figure{position:relative;overflow:hidden;background:#fff}
+.collage figure:first-child{grid-row:1/3}
+.collage img{width:100%;height:100%;object-fit:cover}
+.collage figcaption{position:absolute;left:0;bottom:0;background:var(--red);color:#fff;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:6px 10px}
+
+.finder{background:var(--steel);border-bottom:1px solid var(--line)}
+.finder-in{padding:34px 20px 38px}
+.finder h2{font-family:var(--display);font-size:clamp(28px,3.4vw,40px);font-weight:800;text-transform:uppercase;color:var(--navy-deep)}
+.finder p{color:var(--muted);margin-top:4px}
+.sbox{display:flex;gap:0;margin-top:18px;max-width:760px}
+.sbox input{flex:1;min-width:0;padding:15px 18px;font-size:16px;border:2px solid var(--navy-deep);background:#fff;border-right:0;border-radius:0}
+.sbox button{padding:0 26px;background:var(--navy-deep);color:#fff;border:2px solid var(--navy-deep);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:13px}
+.sbox button:hover{background:var(--red);border-color:var(--red)}
+.eg{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;align-items:center;font-size:13px;color:var(--muted)}
+.eg button{background:#fff;border:1px solid var(--line);padding:6px 12px;font-size:13px}
+.eg button:hover{border-color:var(--red);color:var(--red)}
+#results{margin-top:22px;display:grid;gap:18px}
+.rgroup h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.rlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:8px}
+.rchip{display:flex;gap:12px;align-items:center;text-align:left;background:#fff;border:1px solid var(--line);padding:10px 12px;border-left:4px solid var(--navy)}
+.rchip:hover{border-left-color:var(--red);box-shadow:0 6px 18px rgba(10,27,69,.1)}
+.rchip b{font-family:var(--display);font-size:22px;color:var(--navy-deep);line-height:1;white-space:nowrap}
+.rchip span{font-size:13px;color:var(--muted);line-height:1.35}
+.empty{background:#fff;border:1px dashed #b8c2d8;padding:16px;font-size:14px;color:var(--muted)}
+
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:40px}
+.q{position:relative;min-height:230px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;overflow:hidden;background:var(--navy-deep)}
+.q img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55;transition:transform .5s}
+.q:hover img{transform:scale(1.05)}
+.q::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,27,69,.92),rgba(10,27,69,.15))}
+.q>*:not(img){position:relative;z-index:1}
+.q small{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#ffb9bd}
+.q h3{font-family:var(--display);font-size:34px;font-weight:800;text-transform:uppercase;margin:2px 0 8px}
+.q .more{align-self:flex-start;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-bottom:2px solid var(--red);padding-bottom:2px}
+
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{background:#fff;border:1px solid var(--line);padding:9px 16px;font-size:13px;font-weight:600}
+.tab:hover{border-color:var(--navy)}
+.tab[aria-pressed="true"]{background:var(--navy-deep);color:#fff;border-color:var(--navy-deep)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 18px}
+.card{display:flex;flex-direction:column;background:#fff;text-align:left}
+.card.hide{display:none}
+.thumb{position:relative;aspect-ratio:1/1;background:var(--steel);overflow:hidden;display:block;width:100%;border:0;padding:0}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card[data-c="loc"] .thumb{background:#fff;border:1px solid var(--line)}
+.card[data-c="loc"] .thumb img{object-fit:contain}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:30px;border:1px solid var(--line);background:var(--steel)}
+.cmp figure{position:relative;min-height:240px;overflow:hidden}
+.cmp img{width:100%;height:100%;object-fit:cover;max-height:320px}
+.cmp>div{padding:26px;display:flex;flex-direction:column;gap:10px;justify-content:center}
+.cmp h3{font-family:var(--display);font-size:30px;text-transform:uppercase;color:var(--navy-deep)}
+.cmp p{font-size:14.5px;color:var(--muted)}
+.cmp ul{list-style:none;display:grid;gap:6px;font-size:14.5px}
+.cmp li b{color:var(--red)}
+@media (max-width:860px){.cmp{grid-template-columns:1fr}}
+.card:hover .thumb img{transform:scale(1.04)}
+.ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#7b88a6;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:16px}
+.ph svg{width:84px;height:84px}
+.tag{position:absolute;top:10px;left:10px;background:var(--navy-deep);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px}
+.tag.red{background:var(--red)}
+.card h3{font-family:var(--display);font-size:26px;font-weight:700;margin-top:12px;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.01em}
+.card .kind{font-size:12px;font-weight:600;color:var(--red);letter-spacing:.06em;text-transform:uppercase}
+.card .sub{font-size:13px;color:var(--muted);margin-top:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:60px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chips span{background:var(--steel);font-size:12px;padding:3px 8px;font-weight:500}
+.card .row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.card .row a,.card .row button{padding:10px 6px;text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:2px solid var(--navy-deep);background:#fff;color:var(--navy-deep)}
+.card .row button:hover{background:var(--navy-deep);color:#fff}
+.card .row a{background:var(--red);border-color:var(--red);color:#fff}
+.card .row a:hover{background:var(--red-dark);border-color:var(--red-dark)}
+
+.certs{background:var(--steel)}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert{background:#fff;border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:12px}
+.cert .lg{height:70px;display:flex;align-items:center}
+.cert .lg img{max-height:64px;width:auto;max-width:200px;object-fit:contain}
+.cert h3{font-size:18px;color:var(--navy-deep)}
+.cert p{font-size:14px;color:var(--muted)}
+.cert .until{margin-top:auto;font-size:12.5px;font-weight:700;color:var(--navy);background:#e6ecfb;padding:7px 10px;align-self:flex-start}
+.compatline{margin-top:22px;font-size:14px;color:var(--muted)}
+.compatline b{color:var(--navy-deep)}
+
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.about h2{font-family:var(--display);font-size:clamp(34px,4.2vw,52px);font-weight:800;text-transform:uppercase;color:var(--navy-deep);margin:10px 0 16px}
+.about p{color:var(--muted);max-width:56ch}
+.usp{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.usp div{background:#fff;padding:24px}
+.usp svg{width:30px;height:30px;margin-bottom:12px;stroke:var(--red)}
+.usp b{display:block;margin-bottom:4px}
+.usp span{font-size:13.5px;color:var(--muted)}
+
+.jobs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.job{border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:6px;border-top:4px solid var(--navy)}
+.job h3{font-size:19px;color:var(--navy-deep)}
+.job .pay{font-weight:700;color:var(--red)}
+.job p{font-size:13.5px;color:var(--muted)}
+.job a{margin-top:12px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;border-bottom:2px solid var(--red);align-self:flex-start}
+
+.contact{background:var(--navy-deep);color:#fff}
+.contact-in{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact h2{font-family:var(--display);font-size:clamp(34px,4.2vw,52px);font-weight:800;text-transform:uppercase;margin:10px 0 14px}
+.contact p{color:#cdd6ec;max-width:46ch}
+.info{margin-top:24px;display:grid;gap:0}
+.info>div{display:grid;grid-template-columns:110px 1fr;gap:12px;font-size:15px;border-top:1px solid rgba(255,255,255,.16);padding:13px 0}
+.info span{color:#a9b7de;font-size:12px;text-transform:uppercase;letter-spacing:.1em;padding-top:3px}
+.info a:hover{text-decoration:underline}
+#mapBox{margin-top:22px;min-height:260px;background:#fff;color:var(--ink)}
+#mapBox iframe{width:100%;height:300px;border:0;display:block}
+.mapfall{padding:22px;display:grid;gap:12px}
+.mapfall b{color:var(--navy-deep)}
+form{background:#fff;color:var(--ink);padding:28px;display:grid;gap:14px;align-content:start;align-self:start}
+form h3{font-family:var(--display);font-size:30px;text-transform:uppercase;color:var(--navy-deep)}
+label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);display:grid;gap:6px}
+input,textarea,select{font-size:15px;padding:12px 14px;border:1px solid #c5cee0;background:#fff;width:100%;border-radius:0}
+textarea{min-height:96px;resize:vertical}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+#formOut{display:none;background:var(--steel);padding:14px;font-size:14px;white-space:pre-wrap;border-left:4px solid var(--red)}
+#formMsg{font-size:13.5px;color:var(--muted);display:none}
+
+footer{background:#06112f;color:#a9b7de;padding:52px 0 26px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:36px}
+footer h4{color:#fff;font-size:12.5px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:12px}
+footer a,footer span.l{display:block;padding:3px 0}
+footer a:hover{color:#fff}
+.flogo{background:#fff;padding:10px 14px;display:inline-block;margin-bottom:14px}
+.flogo img{height:42px;width:auto}
+.copy{margin-top:34px;padding-top:18px;border-top:1px solid #1a2850;font-size:12.5px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Modal */
+#modal{position:fixed;inset:0;z-index:100;background:rgba(6,17,47,.7);display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:24px 14px}
+#modal.open{display:flex}
+.mbox{background:#fff;max-width:1000px;width:100%;position:relative;display:grid;grid-template-columns:.9fr 1.1fr}
+.mclose{position:absolute;top:8px;right:8px;width:40px;height:40px;border:0;background:var(--navy-deep);color:#fff;font-size:22px;z-index:2}
+.mclose:hover{background:var(--red)}
+.mmedia{background:var(--steel);padding:16px}
+.mmain{aspect-ratio:3/4;background:#fff;overflow:hidden}
+.mmain img{width:100%;height:100%;object-fit:contain}
+.mthumbs{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.mthumbs button{width:62px;height:62px;border:2px solid transparent;padding:0;background:#fff}
+.mthumbs button[aria-current="true"]{border-color:var(--red)}
+.mthumbs img{width:100%;height:100%;object-fit:cover}
+.mbody{padding:28px 28px 24px}
+.mbody .kind{font-size:12px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase}
+.mbody h2{font-family:var(--display);font-size:42px;text-transform:uppercase;color:var(--navy-deep);margin:4px 0 14px}
+dl.spec{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line);font-size:14.5px}
+dl.spec dt,dl.spec dd{padding:9px 0;border-bottom:1px solid var(--line)}
+dl.spec dt{color:var(--muted)}
+dl.spec dd{font-weight:600}
+.mbody h4{margin:20px 0 8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ctable{max-height:280px;overflow:auto;border:1px solid var(--line)}
+.ctable table{width:100%;border-collapse:collapse;font-size:14px}
+.ctable th,.ctable td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--line)}
+.ctable th{position:sticky;top:0;background:var(--steel);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mact{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+
+@media (max-width:1020px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .burger{display:block}
+  nav{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;height:auto;padding:6px 20px 14px}
+  nav a.top{padding:13px 0;border-bottom:1px solid var(--line)}
+  .call{padding:11px 12px;font-size:12.5px}
+  .hero-in{grid-template-columns:1fr}
+  .collage{height:360px}
+  .quick,.cgrid,.jobs{grid-template-columns:1fr}
+  .about,.contact-in{grid-template-columns:1fr;gap:34px}
+  .mbox{grid-template-columns:1fr}
+  .sec{padding:52px 0}
+}
+@media (max-width:560px){
+  .grid{grid-template-columns:repeat(2,1fr);gap:20px 12px}
+  .card h3{font-size:22px}
+  .usp,.row2,.fgrid{grid-template-columns:1fr}
+  .info>div{grid-template-columns:1fr;gap:2px}
+  .sbox button{padding:0 16px}
+  dl.spec{grid-template-columns:120px 1fr}
+  .logo img{height:38px}
+  .card .row{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container header-inner">
-      <a href="#" class="logo">
-          <img src="logo.png" alt="Phụ Tùng Thành Phong" style="height: 80px; width: auto;">
-      </a>
-      <nav class="nav" id="nav">
-        <a href="#about">Giới thiệu</a>
-        <a href="#services">Dịch vụ</a>
-               <div class="dropdown">
-          <a href="#products" class="dropbtn">Sản phẩm ▾</a>
-          <div class="dropdown-content">
-            <a href="#day-curoa">Dây Curoa</a>
-            <a href="#products">Còi</a>
-            <a href="#products">Nhông Sên Dĩa</a>
-           <a href="#bugi-bosch">Bugi Bosch</a>
-            <a href="#products">Lọc Gió</a>
-          </div>
-        </div>
-        <a href="#partners">Đối tác</a>
-        <a href="#careers">Tuyển dụng</a>
-        <a href="#contact">Liên hệ</a>
-      </nav>
-      <a href="tel:0909611148" class="btn btn-sm header-cta">📞 0909 611 148</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
-    </div>
-  </header>
+<div class="announce"><b>Hàng chính hãng, có tem bảo hành.</b> Giá sỉ cho cửa hàng và đại lý. Giao hàng toàn quốc. Hotline <b>0909 611 148</b></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-text">
-        <span class="badge">⚡ Uy tín chất lượng – Giao hàng toàn quốc</span>
-        <h1>Phụ Tùng Xe Máy & Tay Ga<br><span class="accent">Chính Hãng – Giá Sỉ Tốt</span></h1>
-        <p>Chuyên cung cấp phụ tùng xe gắn máy, xe tay ga cho cửa hàng, xưởng sửa chữa và khách lẻ. Cam kết hàng chính hãng, bảo hành đầy đủ.</p>
-        <div class="hero-actions">
-          <a href="#products" class="btn">Xem sản phẩm</a>
-          <a href="tel:0909611148" class="btn btn-outline">📞 Gọi báo giá</a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>1+</strong><span>Năm kinh nghiệm</span></div>
-          <div><strong>3000+</strong><span>Khách hàng</span></div>
-          <div><strong>5000+</strong><span>Mã phụ tùng</span></div>
-        </div>
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Phụ Tùng Thành Phong, về đầu trang"><img src="img/brand/logo.png" alt="Logo Thành Phong Phụ tùng xe máy" width="200" height="47"></a>
+    <nav id="nav" aria-label="Menu chính">
+      <ul>
+        <li><a class="top" href="#tra-ma">Tra mã theo xe</a></li>
+        <li><a class="top" href="#san-pham">Sản phẩm</a></li>
+        <li><a class="top" href="#doi-tac">Đối tác</a></li>
+        <li><a class="top" href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a class="top" href="#tuyen-dung">Tuyển dụng</a></li>
+        <li><a class="top" href="#lien-he">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <div class="tools">
+      <a class="call" href="tel:0909611148">Gọi 0909 611 148</a>
+      <button class="burger" id="burger" aria-label="Mở menu" aria-expanded="false">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-in">
+    <div>
+      <span class="eyebrow">Phụ tùng xe máy &amp; tay ga chính hãng</span>
+      <h1>Đúng mã.<br><em>Giá sỉ.</em><br>Giao toàn quốc.</h1>
+      <p>Thành Phong phân phối bugi Bosch, dây curoa và lọc gió Lucas, nhông sên dĩa YBN cho cửa hàng, xưởng sửa chữa và khách lẻ. Có tem bảo hành, hỗ trợ đổi trả và tra đúng mã theo dòng xe.</p>
+      <div class="btns">
+        <a class="btn" href="#tra-ma">Tra mã theo xe</a>
+        <a class="btn ghost" href="#lien-he">Nhận báo giá</a>
       </div>
-      <div class="hero-image">
-        <div class="hero-img-placeholder">
-         <img src="huyhieu.jpg" alt="Logo Thành Phong" style="width: 75%; height: auto; object-fit: contain;">
-        </div>
+      <div class="stats">
+        <div><b>1</b><span>Năm kinh nghiệm</span></div>
+        <div><b id="statCodes">43</b><span>Mã hàng thực tế</span></div>
+        <div><b id="statVisits" title="Số lượt truy cập trang web">—</b><span>Lượt truy cập</span></div>
       </div>
     </div>
-  </section>
+    <div class="collage">
+      <figure><img src="img/p/curoa-2.jpg" alt="Dây curoa Lucas mã KZR-6010 và hộp" width="720" height="960"><figcaption>Lucas · Dây curoa</figcaption></figure>
+      <figure><img src="img/p/bugi-a6tc-2.jpg" alt="Bugi Bosch A6TC và hộp" width="720" height="960"><figcaption>Bosch · Bugi</figcaption></figure>
+      <figure><img src="img/p/loc-6.jpg" alt="Lọc gió Lucas mã K29" width="720" height="960"><figcaption>Lucas · Lọc gió</figcaption></figure>
+    </div>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="container about-grid">
+<section class="finder" id="tra-ma">
+  <div class="wrap finder-in">
+    <span class="eyebrow">Tra cứu nhanh</span>
+    <h2>Xe của bạn dùng mã nào?</h2>
+    <p>Nhập tên dòng xe để xem mã bugi, dây curoa, lọc gió và nhông sên dĩa phù hợp.</p>
+    <form class="sbox" id="sform" role="search" onsubmit="return false" style="padding:0;background:none;display:flex;gap:0;max-width:760px">
+      <input id="q" type="search" placeholder="Ví dụ: SH Mode, Vision, Wave, Exciter..." autocomplete="off" aria-label="Nhập tên dòng xe">
+      <button type="submit" id="qbtn">Tra mã</button>
+    </form>
+    <div class="eg"><span>Thử:</span><button type="button" data-q="SH Mode">SH Mode</button><button type="button" data-q="Vision">Vision</button><button type="button" data-q="Air Blade">Air Blade</button><button type="button" data-q="Wave">Wave</button><button type="button" data-q="Exciter">Exciter</button><button type="button" data-q="PCX">PCX</button></div>
+    <div id="results" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="quick">
+    <a class="q" href="#san-pham" data-go="bugi"><img src="img/p/bugi-a6tc-2.jpg" alt="" loading="lazy"><small>Bosch Start · 4 mã</small><h3>Bugi Bosch</h3><span class="more">Xem sản phẩm</span></a>
+    <a class="q" href="#san-pham" data-go="curoa"><img src="img/p/curoa-10.jpg" alt="" loading="lazy"><small>Lucas · 18 mã</small><h3>Dây curoa</h3><span class="more">Xem sản phẩm</span></a>
+    <a class="q" href="#san-pham" data-go="loc"><img src="img/p/loc-1.jpg" alt="" loading="lazy"><small>Lucas · 6 mã</small><h3>Lọc gió</h3><span class="more">Xem sản phẩm</span></a>
+  </div>
+</div>
+
+<section class="sec" id="san-pham">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><span class="eyebrow">Sản phẩm</span><h2>Danh mục phụ tùng</h2></div>
+      <div class="tabs" role="group" aria-label="Lọc sản phẩm" id="tabs"></div>
+    </div>
+    <div class="cmp" id="cmp">
+      <figure><img src="img/p/bugi-a6tc-4.jpg" alt="Bugi Bosch chân dài và chân ngắn đặt cạnh nhau" loading="lazy"></figure>
       <div>
-        <span class="section-tag">Về chúng tôi</span>
-        <h2>Công ty TNHH TM DV Phụ Tùng Thành Phong</h2>
-        <p>Với hơn <strong>1 năm hoạt động</strong> trong lĩnh vực phụ tùng xe gắn máy và xe tay ga, <strong>Thành Phong</strong> là đối tác tin cậy của hàng nghìn cửa hàng, xưởng sửa chữa và khách hàng trên toàn quốc.</p>
-        <p>Chúng tôi chuyên cung cấp phụ tùng cho các dòng xe phổ biến: <strong>Honda, Yamaha, Suzuki, SYM, Piaggio</strong>... Cam kết hàng chính hãng 100%, giá sỉ cạnh tranh.</p>
-        <ul class="check-list">
-          <li>Phụ tùng chính hãng, có tem bảo hành</li>
-          <li>Giá sỉ tốt cho đại lý & xưởng dịch vụ</li>
-          <li>Giao hàng toàn quốc, hỗ trợ đổi trả</li>
-          <li>Tư vấn chọn đúng mã phụ tùng theo xe</li>
-        </ul>
-      </div>
-      <div class="about-visual">
-        <div class="about-card">
-          <div class="about-card-num">1+</div>
-          <strong>Năm uy tín</strong>
-          <p>Đối tác tin cậy của hàng nghìn khách hàng</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="section section-alt" id="services">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Dịch vụ</span>
-        <h2>Chúng tôi cung cấp</h2>
-        <p class="section-desc">Đầy đủ phụ tùng cho xe số và xe tay ga các hãng</p>
-      </div>
-      <div class="grid grid-4">
-        <div class="card">
-          <div class="card-icon">🏍️</div>
-          <h3>Phụ tùng xe tay ga</h3>
-          <p>Honda Vision, Air Blade, Yamaha Janus, Grande, Piaggio...</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔧</div>
-          <h3>Phụ tùng xe số</h3>
-          <p>Wave, Future, Sirius, Jupiter – đầy đủ mã hàng chính hãng.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚙️</div>
-          <h3>Động cơ & truyền động</h3>
-          <p>Piston, xilanh, dây curoa, bi nồi, bộ ly hợp...</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛞</div>
-          <h3>Hệ thống phanh & lốp</h3>
-          <p>Má phanh, đĩa phanh, lốp, săm – chính hãng các hãng.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔋</div>
-          <h3>Điện & ắc quy</h3>
-          <p>Ắc quy, bugi, IC, dây điện, đèn – chuẩn theo xe.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎨</div>
-          <h3>Vỏ nhựa – dàn áo</h3>
-          <p>Dàn áo, yếm, ốp hông, gương, tay nắm đủ màu.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛠️</div>
-          <h3>Dụng cụ & phụ kiện</h3>
-          <p>Dụng cụ sửa chữa, phụ kiện chăm sóc xe chuyên dụng.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📦</div>
-          <h3>Bán sỉ – đại lý</h3>
-          <p>Chiết khấu tốt cho đại lý, xưởng, cửa hàng phụ tùng.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="section" id="products">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Sản phẩm</span>
-        <h2>Sản phẩm nổi bật</h2>
-        <p class="section-desc">Liên hệ hotline để được báo giá tốt nhất</p>
-      </div>
-      <div class="grid grid-3">
-        <!-- Sản phẩm ĐANG CÓ -->
-        <div class="product-card">
-          <div class="product-img">⚡</div>
-          <h3>Bugi Bosch</h3>
-          <p class="product-code">Hàng chính hãng</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-        <div class="product-card">
-          <div class="product-img">🔗</div>
-          <h3>Dây Curoa Lucas</h3>
-          <p class="product-code">Hàng chính hãng</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-        <div class="product-card">
-          <div class="product-img">🌪️</div>
-          <h3>Lọc Gió Lucas</h3>
-          <p class="product-code">Hàng chính hãng</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-        <div class="product-card">
-          <div class="product-img">⚙️</div>
-          <h3>Nhông Sên Dĩa YBN</h3>
-          <p class="product-code">Hàng chính hãng</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-        <div class="product-card">
-          <div class="product-img">📢</div>
-          <h3>Còi Bosch</h3>
-          <p class="product-code">Hàng chính hãng</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-          <!-- DANH MỤC DÂY CUROA -->
-  <section class="section section-alt" id="day-curoa">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Danh mục sản phẩm</span>
-        <h2>Dây Curoa Chính Hãng</h2>
-        <p class="section-desc">Phân loại theo mã hàng và dòng xe. Quý khách vui lòng chọn đúng dòng xe để được tư vấn.</p>
-      </div>
-      
-      <div class="grid grid-4">
-        <!-- Sản phẩm Dây Curoa 1 -->
-        <div class="product-card">
-          <div class="product-img" style="display:flex; align-items:center; justify-content:center; font-size:14px; color:#64748b; background:#f1f5f9;">(Chờ hình ảnh)</div>
-          <h3>Dây Curoa Lucas</h3>
-          <p class="product-code">Mã hàng: <strong>[Điền mã]</strong></p>
-          <p style="font-size: 13px; color: #475569; margin-bottom: 10px;">Dòng xe: Honda Vision, Lead...</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-        
-        <!-- Sản phẩm Dây Curoa 2 -->
-        <div class="product-card">
-          <div class="product-img" style="display:flex; align-items:center; justify-content:center; font-size:14px; color:#64748b; background:#f1f5f9;">(Chờ hình ảnh)</div>
-          <h3>Dây Curoa Bando</h3>
-          <p class="product-code">Mã hàng: <strong>[Điền mã]</strong></p>
-          <p style="font-size: 13px; color: #475569; margin-bottom: 10px;">Dòng xe: Yamaha Janus, Grande...</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-        
-        <!-- Sản phẩm Dây Curoa 3 -->
-        <div class="product-card">
-          <div class="product-img" style="display:flex; align-items:center; justify-content:center; font-size:14px; color:#64748b; background:#f1f5f9;">(Chờ hình ảnh)</div>
-          <h3>Dây Curoa Mitsuboshi</h3>
-          <p class="product-code">Mã hàng: <strong>[Điền mã]</strong></p>
-          <p style="font-size: 13px; color: #475569; margin-bottom: 10px;">Dòng xe: Honda Air Blade, PCX...</p>
-          <a href="tel:0909611148" class="btn btn-sm">📞 Báo giá</a>
-        </div>
-      </div>
-    </div>
-  </section>
-          <!-- DANH MỤC BUGI BOSCH -->
-  <section class="section" id="bugi-bosch">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Danh mục sản phẩm</span>
-        <h2>Bugi Bosch Start</h2>
-        <p class="section-desc">Phân loại theo mã hàng và dòng xe. Quý khách vui lòng chọn đúng dòng xe để được tư vấn.</p>
-      </div>
-      
-      <!-- Khung chi tiết sản phẩm -->
-      <div class="product-detail-card">
-        <!-- Cột trái: Hình ảnh -->
-        <div class="product-detail-img">
-          <!-- Bạn sẽ thay link ảnh thật vào đây sau -->
-          <div style="width: 100%; height: 300px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #64748b;">
-           <img src="bugi-dai-1.jpg" alt="Bugi Bosch B9RTC" style="width: 100%; height: 300px; object-fit: contain; border-radius: 12px; background: #f8fafc;">
-          </div>
-        </div>
-        
-        <!-- Cột phải: Thông tin -->
-        <div class="product-detail-info">
-          <h3>Bugi Bosch Start - B9RTC</h3>
-          <p class="product-code" style="font-size: 15px; margin-bottom: 20px;">Mã OEM: <strong>F01A027015HD0</strong></p>
-          
-          <!-- Bảng thông số -->
-          <table class="specs-table">
-            <tr>
-              <td><strong>Chiều dài ren:</strong></td>
-              <td>19 mm</td>
-            </tr>
-            <tr>
-              <td><strong>Đường kính ren:</strong></td>
-              <td>10 mm</td>
-            </tr>
-            <tr>
-              <td><strong>Mô tả:</strong></td>
-              <td>Chân dài, chấu cao</td>
-            </tr>
-          </table>
-          
-          <div class="compatible-vehicles">
-            <h4>Dòng xe tương thích:</h4>
-            <div class="vehicle-tags">
-              <span>CB-500F</span>
-              <span>CB-500X</span>
-              <span>CB-650F</span>
-              <span>CBR-650F</span>
-              <span>PCX (2018.02-)</span>
-              <span>Rebel 300</span>
-              <span>Rebel 500</span>
-              <span>Vision (2011-2014.07)</span>
-              <span>Vision (2014.07-)</span>
-              <span>Winner</span>
-              <span>GSX-R150</span>
-              <span>GSX-S150</span>
-              <span>Raider R150</span>
-              <span>Exciter</span>
-              <span>NVX</span>
-            </div>
-          </div>
-          
-          <a href="tel:0909611148" class="btn" style="margin-top: 20px;">📞 Gọi để báo giá</a>
-        </div>
-      </div>
-          <!-- Bugi B7RC -->
-      <div class="product-detail-card" style="margin-top: 40px;">
-        <div class="product-detail-img">
-          <div style="width: 100%; height: 300px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #64748b;">
-           <img src="bugi-dai-2.jpg" alt="Bugi Bosch B7RC" style="width: 100%; height: 300px; object-fit: contain; border-radius: 12px; background: #f8fafc;">
-          </div>
-        </div>
-        <div class="product-detail-info">
-          <h3>Bugi Bosch Start - B7RC</h3>
-          <p class="product-code" style="font-size: 15px; margin-bottom: 20px;">Mã OEM: <strong>F01A027013DH0</strong></p>
-          <table class="specs-table">
-            <tr><td><strong>Chiều dài ren:</strong></td><td>19 mm</td></tr>
-            <tr><td><strong>Đường kính ren:</strong></td><td>10 mm</td></tr>
-            <tr><td><strong>Mô tả:</strong></td><td>Chân dài, chấu thấp</td></tr>
-          </table>
-          <div class="compatible-vehicles">
-            <h4>Dòng xe tương thích:</h4>
-            <div class="vehicle-tags">
-              <span>SH 125-150 (2012.04-2016)</span>
-              <span>Fly (2014-)</span>
-              <span>GTS Super 300 (2017-)</span>
-              <span>Liberty ABS (2014-2017)</span>
-              <span>Vespa / Primavera (2009-2017)</span>
-              <span>ZIP 100 E3 (2018-)</span>
-              <span>Nouvo SX (2002-2016)</span>
-              <span>Nozza (2011-2014)</span>
-            </div>
-          </div>
-          <a href="tel:0909611148" class="btn" style="margin-top: 20px;">📞 Gọi để báo giá</a>
-        </div>
-      </div>
-
-      <!-- Bugi A6TC -->
-      <div class="product-detail-card" style="margin-top: 40px;">
-        <div class="product-detail-img">
-          <div style="width: 100%; height: 300px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #64748b;">
-           <img src="bugi-ngan-1.jpg" alt="Bugi Bosch A6TC" style="width: 100%; height: 300px; object-fit: contain; border-radius: 12px; background: #f8fafc;">
-          </div>
-        </div>
-        <div class="product-detail-info">
-          <h3>Bugi Bosch Start - A6TC</h3>
-          <p class="product-code" style="font-size: 15px; margin-bottom: 20px;">Mã OEM: <strong>F01A016011HD0</strong></p>
-          <table class="specs-table">
-            <tr><td><strong>Chiều dài ren:</strong></td><td>12,7 mm (hoặc xấp xỉ 13 mm)</td></tr>
-            <tr><td><strong>Đường kính ren:</strong></td><td>14 mm</td></tr>
-            <tr><td><strong>Mô tả:</strong></td><td>Chân ngắn, chấu thấp</td></tr>
-          </table>
-          <div class="compatible-vehicles">
-            <h4>Dòng xe tương thích:</h4>
-            <div class="vehicle-tags">
-              <span>Dream</span>
-              <span>Dream II</span>
-              <span>Future</span>
-              <span>Super Dream (1997-2017)</span>
-              <span>Wave 100 / Alpha</span>
-              <span>Abela (2018-)</span>
-              <span>Angel (2018-)</span>
-              <span>Fancy EFI (ABS) (2017-)</span>
-              <span>Fancy EFI (tiêu chuẩn) (2017-)</span>
-              <span>Shark Mini EFI (2016-)</span>
-              <span>Axelo (2012-)</span>
-              <span>GD110 (2017-)</span>
-              <span>Hayate (2009-)</span>
-              <span>Hayate Fi (2011-)</span>
-              <span>Impulse Fi (2017-)</span>
-              <span>Acruzo (2015.1-)</span>
-              <span>Grande (2014.07-)</span>
-              <span>Janus (2016.9-)</span>
-              <span>Jupiter (2001-2016.12)</span>
-              <span>Sirius</span>
-              <span>Sirius Fi</span>
-            </div>
-          </div>
-          <a href="tel:0909611148" class="btn" style="margin-top: 20px;">📞 Gọi để báo giá</a>
-        </div>
-      </div>
-
-      <!-- Bugi B8RTC -->
-      <div class="product-detail-card" style="margin-top: 40px;">
-        <div class="product-detail-img">
-          <div style="width: 100%; height: 300px; background: #f1f5f9; display: flex; align-items: center; justify-content: center; border-radius: 12px; color: #64748b;">
-           <img src="bugi-ngan-2.jpg" alt="Bugi Bosch B8RTC" style="width: 100%; height: 300px; object-fit: contain; border-radius: 12px; background: #f8fafc;">
-          </div>
-        </div>
-        <div class="product-detail-info">
-          <h3>Bugi Bosch Start - B8RTC</h3>
-          <p class="product-code" style="font-size: 15px; margin-bottom: 20px;">Mã OEM: <strong>F01A027014HD0</strong></p>
-          <table class="specs-table">
-            <tr><td><strong>Chiều dài ren:</strong></td><td>19 mm</td></tr>
-            <tr><td><strong>Đường kính ren:</strong></td><td>10 mm</td></tr>
-            <tr><td><strong>Mô tả:</strong></td><td>Chân dài, chấu cao</td></tr>
-          </table>
-          <div class="compatible-vehicles">
-            <h4>Dòng xe tương thích:</h4>
-            <div class="vehicle-tags">
-              <span>AIRBLADE (2012-)</span>
-              <span>AIRBLADE (REP) (2009-2011)</span>
-              <span>BLADE (2014-)</span>
-              <span>FUTURE II/NEC (2004-)</span>
-              <span>LEAD (2013-)</span>
-              <span>MSX 125 (2014-)</span>
-              <span>PCX (2010-2018.01)</span>
-              <span>SH 125-150 (2012.06-2016)</span>
-              <span>SH MODE (2013-)</span>
-              <span>SUPER DREAM (2013-2017)</span>
-              <span>WAVE ALPHA (2009-)</span>
-              <span>ADDRESS Fi (2016-)</span>
-              <span>VIVA FI (2013-)</span>
-            </div>
-          </div>
-          <a href="tel:0909611148" class="btn" style="margin-top: 20px;">📞 Gọi để báo giá</a>
-        </div>
-      </div>
-    </div>
-  </section>
-        <!-- Sản phẩm ĐANG NHẬP HÀNG -->
-       
-        <div class="product-card">
-          <div class="product-img">🎨</div>
-          <h3>Dàn Áo Xe Vision</h3>
-          <p class="product-code">Mã: TP-DA-089</p>
-          <button class="btn btn-sm" style="background: #94a3b8; border-color: #94a3b8; cursor: not-allowed;">Đang nhập hàng</button>
-        </div>
-        <div class="product-card">
-          <div class="product-img">💡</div>
-          <h3>Bugi NGK Chính Hãng</h3>
-          <p class="product-code">Mã: TP-BG-062</p>
-          <button class="btn btn-sm" style="background: #94a3b8; border-color: #94a3b8; cursor: not-allowed;">Đang nhập hàng</button>
-        </div>
-        <div class="product-card">
-          <div class="product-img">🛞</div>
-          <h3>Má Phanh Sirius</h3>
-          <p class="product-code">Mã: TP-MP-032</p>
-          <button class="btn btn-sm" style="background: #94a3b8; border-color: #94a3b8; cursor: not-allowed;">Đang nhập hàng</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARTNERS -->
-  <section class="section section-alt" id="partners">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Đối tác</span>
-        <h2>Thương hiệu đồng hành</h2>
-        <p class="section-desc">Chúng tôi phân phối phụ tùng chính hãng từ các thương hiệu uy tín</p>
-      </div>
-      <div class="partners-grid">
-        <div class="partner-item">HONDA</div>
-        <div class="partner-item">YAMAHA</div>
-        <div class="partner-item">SUZUKI</div>
-        <div class="partner-item">SYM</div>
-        <div class="partner-item">PIAGGIO</div>
-        <div class="partner-item">NGK</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <div class="container cta-inner">
-      <div>
-        <h2>Cần báo giá phụ tùng?</h2>
-        <p>Gọi ngay hotline <strong>0909 611 148</strong> – phản hồi trong 15 phút</p>
-      </div>
-      <div class="cta-actions">
-        <a href="tel:0909611148" class="btn btn-light">📞 Gọi ngay</a>
-        <a href="#contact" class="btn btn-outline">Gửi yêu cầu</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CAREERS -->
-  <section class="section" id="careers">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Tuyển dụng</span>
-        <h2>Cơ hội nghề nghiệp</h2>
-        <p class="section-desc">Gia nhập đội ngũ Thành Phong – môi trường năng động, thu nhập hấp dẫn</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="career-card">
-          <span class="career-tag">Toàn thời gian</span>
-          <h3>Nhân Viên Kinh Doanh</h3>
-          <p>📍 TP.HCM · 💰 10–20 triệu + hoa hồng</p>
-          <p class="career-desc">Tư vấn, chăm sóc khách hàng đại lý, xưởng dịch vụ.</p>
-          <a href="#contact" class="btn btn-sm btn-outline-dark">Ứng tuyển</a>
-        </div>
-        <div class="career-card">
-          <span class="career-tag">Toàn thời gian</span>
-          <h3>Nhân Viên Kho</h3>
-          <p>📍 TP.HCM · 💰 8–12 triệu</p>
-          <p class="career-desc">Quản lý xuất nhập kho phụ tùng, sắp xếp hàng hóa.</p>
-          <a href="#contact" class="btn btn-sm btn-outline-dark">Ứng tuyển</a>
-        </div>
-        <div class="career-card">
-          <span class="career-tag">Toàn thời gian</span>
-          <h3>Kỹ Thuật Viên</h3>
-          <p>📍 TP.HCM · 💰 12–18 triệu</p>
-          <p class="career-desc">Tư vấn kỹ thuật, kiểm tra mã phụ tùng theo xe.</p>
-          <a href="#contact" class="btn btn-sm btn-outline-dark">Ứng tuyển</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section section-alt" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <span class="section-tag">Liên hệ</span>
-        <h2>Gửi yêu cầu báo giá</h2>
-        <p class="section-desc">Điền form hoặc gọi trực tiếp hotline để được hỗ trợ nhanh nhất</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <div class="contact-item">
-            <span class="contact-icon">📞</span>
-            <div><strong>Hotline</strong><a href="tel:0909611148">0909 611 148</a></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">✉️</span>
-            <div><strong>Email</strong><a href="mailto:phutungxemaythanhphong42@gmail.com">phutungxemaythanhphong42@gmail.com</a></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <div><strong>Địa chỉ</strong><p>42 Hà Huy Giáp, P. An Phú Đông, TP.HCM</p></div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">🕐</span>
-            <div><strong>Giờ làm việc</strong><p>T2 – T7: 8:00 – 18:00</p></div>
-          </div>
-        </div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="text" name="name" placeholder="Họ và tên *" required>
-          <input type="tel" name="phone" placeholder="Số điện thoại *" required>
-          <input type="email" name="email" placeholder="Email (nếu có)">
-          <textarea name="message" rows="4" placeholder="Nội dung: mã phụ tùng / dòng xe cần báo giá *" required></textarea>
-          <button type="submit" class="btn">Gửi yêu cầu</button>
-          <p class="form-note">Hoặc gọi ngay <a href="tel:0909611148">0909 611 148</a></p>
-        </form>
-      </div>
-
-      <!-- MAP -->
-      <div class="map-wrap">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4946681007835!2d106.6981871!3d10.776889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ2JzM2LjgiTiAxMDbCsDQxJzUzLjUiRQ!5e0!3m2!1svi!2s!4v1700000000000"
-          width="100%" height="350" style="border:0;" allowfullscreen loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <div class="logo">
-          <span class="logo-mark">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="5.5" cy="17.5" r="3.5"/><circle cx="18.5" cy="17.5" r="3.5"/>
-              <path d="M15 6h4l2 5M5 17.5h9M11 6h4M14 6l-3 11.5"/>
-            </svg>
-          </span>
-          <span class="logo-text">THÀNH PHONG<small>Phụ Tùng Xe Máy & Tay Ga</small></span>
-        </div>
-        <p class="footer-desc">Công ty TNHH TM DV Phụ Tùng Thành Phong – Chuyên phụ tùng xe gắn máy và xe tay ga chính hãng, giá sỉ tốt, giao hàng toàn quốc.</p>
-      </div>
-      <div>
-        <h4>Liên kết</h4>
+        <span class="eyebrow">Bugi Bosch Start</span>
+        <h3>Chân ngắn và chân dài</h3>
+        <p>Hai nhóm bugi khác nhau về chiều dài và đường kính ren. Chọn sai ren sẽ không lắp được, nên hãy tra theo dòng xe.</p>
         <ul>
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#services">Dịch vụ</a></li>
-          <li><a href="#products">Sản phẩm</a></li>
-          <li><a href="#careers">Tuyển dụng</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Liên hệ</h4>
-        <ul>
-          <li>📞 <a href="tel:0909611148">0909 611 148</a></li>
-          <li>✉️ <a href="mailto:phutungxemaythanhphong42@gmail.com">phutungxemaythanhphong42@gmail.com</a></li>
-          <li>📍 42 Hà Huy Giáp, P. An Phú Đông, TP.HCM</li>
-          <li>🕐 T2–T7: 8:00 – 18:00</li>
+          <li><b>Chân ngắn:</b> A6TC, ren 12,7 mm, đường kính 14 mm</li>
+          <li><b>Chân dài:</b> B9RTC, B7RC, B8RTC, ren 19 mm, đường kính 10 mm</li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">© 2025 Công ty TNHH TM DV Phụ Tùng Thành Phong. All rights reserved.</div>
-  </footer>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
 
-  <script src="js/main.js"></script>
+<section class="sec certs" id="doi-tac">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Đối tác</span><h2>Được ủy quyền phân phối</h2></div></div>
+    <div class="cgrid">
+      <div class="cert">
+        <div class="lg"><img src="img/brand/bosch.png" alt="Logo Bosch"></div>
+        <h3>Bosch</h3>
+        <p>Được Công ty TNHH Hợp Thành Autoparts chứng nhận là đơn vị phân phối chính thức các sản phẩm phụ tùng của Bosch tại Việt Nam.</p>
+        <span class="until">Hiệu lực đến 31/12/2027</span>
+      </div>
+      <div class="cert">
+        <div class="lg"><img src="img/brand/lucas.png" alt="Logo Lucas"></div>
+        <h3>Lucas</h3>
+        <p>Đơn vị phân phối và bán lại được ủy quyền cấp 2 các sản phẩm phụ tùng xe máy thương hiệu LUCAS tại Việt Nam, theo ủy quyền của Guangzhou Zhicheng Import and Export Co., Ltd.</p>
+        <span class="until">Hiệu lực đến 31/12/2027</span>
+      </div>
+      <div class="cert">
+        <div class="lg"><img src="img/brand/ybn.png" alt="Logo YBN Yaban Chain"></div>
+        <h3>YBN (YABAN)</h3>
+        <p>Đơn vị phân phối và bán lại được ủy quyền cấp 1 các sản phẩm phụ tùng xe máy thương hiệu YABAN tại Việt Nam, ủy quyền trực tiếp từ Công ty TNHH Yaban Chain Industrial Việt Nam.</p>
+        <span class="until">Hiệu lực đến 31/12/2028</span>
+      </div>
+    </div>
+    <p class="compatline"><b>Phù hợp các dòng xe:</b> Honda, Yamaha, Suzuki, SYM, Piaggio. Tra mã theo từng dòng xe ở mục <a href="#tra-ma" style="text-decoration:underline">Tra mã theo xe</a>.</p>
+  </div>
+</section>
+
+<section class="sec" id="gioi-thieu">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow">Về chúng tôi</span>
+      <h2>Phụ tùng chính hãng cho người làm nghề</h2>
+      <p>Công ty TNHH Thương mại Dịch vụ Phụ Tùng Thành Phong chuyên phụ tùng xe máy và xe tay ga cho cửa hàng, xưởng sửa chữa và khách lẻ. Chúng tôi tập trung vào hai việc: đúng mã và giao nhanh, để bạn không phải chờ hàng.</p>
+      <div class="btns"><a class="btn navy" href="#lien-he">Liên hệ ngay</a></div>
+    </div>
+    <div class="usp">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M12 3l8 3v6c0 4.5-3.2 8-8 9-4.8-1-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5L16 9.5"/></svg><b>Hàng chính hãng</b><span>Có tem bảo hành, hỗ trợ đổi trả.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg><b>Giá sỉ cạnh tranh</b><span>Chiết khấu theo số lượng cho đại lý.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg><b>Giao toàn quốc</b><span>Gửi hàng đến mọi tỉnh thành.</span></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="6"/><path d="M16 16l5 5"/></svg><b>Tư vấn đúng mã</b><span>Tra mã theo đời xe trước khi giao.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="tuyen-dung" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Tuyển dụng · TP.HCM</span><h2>Cùng làm với Thành Phong</h2></div></div>
+    <div class="jobs">
+      <div class="job"><h3>Nhân viên kinh doanh</h3><span class="pay">10 – 20 triệu + hoa hồng</span><p>Làm việc toàn thời gian tại TP.HCM. Chăm sóc cửa hàng, xưởng và đại lý.</p><a href="#lien-he">Ứng tuyển</a></div>
+      <div class="job"><h3>Nhân viên kho</h3><span class="pay">8 – 12 triệu</span><p>Làm việc toàn thời gian tại TP.HCM. Nhập, xuất và sắp xếp phụ tùng.</p><a href="#lien-he">Ứng tuyển</a></div>
+      <div class="job"><h3>Kỹ thuật viên</h3><span class="pay">12 – 18 triệu</span><p>Làm việc toàn thời gian tại TP.HCM. Tra mã, tư vấn kỹ thuật cho khách.</p><a href="#lien-he">Ứng tuyển</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec contact" id="lien-he">
+  <div class="wrap contact-in">
+    <div>
+      <span class="eyebrow" style="color:#ffb9bd">Liên hệ</span>
+      <h2>Nhận báo giá trong 15 phút</h2>
+      <p>Gửi mã phụ tùng hoặc dòng xe bạn cần. Chúng tôi phản hồi trong giờ làm việc.</p>
+      <div class="info">
+        <div><span>Hotline</span><a href="tel:0909611148"><b>0909 611 148</b></a></div>
+        <div><span>Email</span><a href="mailto:phutungxemaythanhphong42@gmail.com">phutungxemaythanhphong42@gmail.com</a></div>
+        <div><span>Địa chỉ</span><div>42 Hà Huy Giáp, Phường An Phú Đông, Thành phố Hồ Chí Minh</div></div>
+        <div><span>Giờ làm việc</span><div>Thứ 2 đến thứ 7, 8:00 – 18:00</div></div>
+      </div>
+      <div id="mapBox"></div>
+    </div>
+    <form id="quote" novalidate>
+      <h3>Yêu cầu báo giá</h3>
+      <div class="row2">
+        <label for="f-name">Họ tên<input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-phone">Số điện thoại<input id="f-phone" name="phone" type="tel" autocomplete="tel" required></label>
+      </div>
+      <label for="f-item">Sản phẩm cần báo giá
+        <select id="f-item" name="item">
+          <option>Bugi Bosch</option><option>Dây curoa Lucas</option><option>Lọc gió Lucas</option><option>Nhông sên dĩa YBN</option><option>Còi Bosch</option><option>Khác</option>
+        </select>
+      </label>
+      <label for="f-note">Dòng xe, mã, số lượng<textarea id="f-note" name="note" placeholder="Ví dụ: Bugi B9RTC, 50 cái, cho PCX"></textarea></label>
+      <button class="btn" type="submit">Tạo nội dung yêu cầu</button>
+      <div id="formOut" role="status"></div>
+      <p id="formMsg"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <a class="flogo" href="#top"><img src="img/brand/logo.png" alt="Thành Phong Phụ tùng xe máy" width="200" height="47"></a>
+        <p>Công ty TNHH Thương mại Dịch vụ Phụ Tùng Thành Phong.<br>Mã số doanh nghiệp: 0319519777</p>
+      </div>
+      <div><h4>Sản phẩm</h4><a href="#san-pham" data-go="bugi">Bugi Bosch</a><a href="#san-pham" data-go="curoa">Dây curoa Lucas</a><a href="#san-pham" data-go="loc">Lọc gió Lucas</a><a href="#san-pham" data-go="nhong">Nhông sên dĩa YBN</a><a href="#san-pham" data-go="coi">Còi Bosch</a></div>
+      <div><h4>Công ty</h4><a href="#tra-ma">Tra mã theo xe</a><a href="#doi-tac">Đối tác</a><a href="#gioi-thieu">Giới thiệu</a><a href="#tuyen-dung">Tuyển dụng</a></div>
+      <div><h4>Liên hệ</h4><a href="tel:0909611148">0909 611 148</a><a href="mailto:phutungxemaythanhphong42@gmail.com">phutungxemaythanhphong42@gmail.com</a><span class="l">42 Hà Huy Giáp, Phường An Phú Đông, Thành phố Hồ Chí Minh</span></div>
+    </div>
+    <div class="copy"><span>&copy; 2025 Phụ Tùng Thành Phong. Bảo lưu mọi quyền.</span><span>Thứ 2 – Thứ 7, 8:00 – 18:00</span></div>
+  </div>
+</footer>
+
+<div id="modal" role="dialog" aria-modal="true" aria-label="Chi tiết sản phẩm"><div class="mbox" id="mbox"></div></div>
+
+<script>
+const DATA = {"bugi": [{"code": "B9RTC", "oem": "F01A027015HD0", "len": "19 mm", "dia": "10 mm", "desc": "Chân dài, chấu cao", "imgs": ["bugi-b9rtc.jpg"], "models": [{"brand": "Honda", "name": "CB-500F", "year": "–"}, {"brand": "Honda", "name": "CB-500X", "year": "–"}, {"brand": "Honda", "name": "CB-650F", "year": "–"}, {"brand": "Honda", "name": "CBR-650F", "year": "–"}, {"brand": "Honda", "name": "PCX", "year": "2018.02–"}, {"brand": "Honda", "name": "Rebel 300", "year": "–"}, {"brand": "Honda", "name": "Rebel 500", "year": "–"}, {"brand": "Honda", "name": "Vision", "year": "2011–2014.07"}, {"brand": "Honda", "name": "Vision", "year": "2014.07–"}, {"brand": "Honda", "name": "Winner", "year": "2016–"}, {"brand": "Yamaha", "name": "Exciter", "year": "2005–"}, {"brand": "Yamaha", "name": "NVX", "year": "2016–"}, {"brand": "Suzuki", "name": "GSX-R150", "year": "2017–"}, {"brand": "Suzuki", "name": "GSX-S150", "year": "2017–"}, {"brand": "Suzuki", "name": "Raider R150", "year": "2016–"}]}, {"code": "B7RC", "oem": "F01A027013DH0", "len": "19 mm", "dia": "10 mm", "desc": "Chân dài, chấu thấp", "imgs": ["bugi-b7rc.jpg"], "models": [{"brand": "Yamaha", "name": "Nouvo SX", "year": "2002–2016"}, {"brand": "Yamaha", "name": "Nozza", "year": "2011–2014"}, {"brand": "Piaggio", "name": "Fly", "year": "2014–"}, {"brand": "Piaggio", "name": "GTS Super 300", "year": "2017–"}, {"brand": "Piaggio", "name": "Liberty ABS", "year": "2014–2017"}, {"brand": "Piaggio", "name": "SH 125–150", "year": "2012.04–2016"}, {"brand": "Piaggio", "name": "Vespa / Primavera / Sprint LX", "year": "2009–2017"}, {"brand": "Piaggio", "name": "ZIP 100 E3", "year": "2018–"}]}, {"code": "A6TC", "oem": "F01A016011HD0", "len": "12,7 mm (hoặc xấp xỉ 13 mm)", "dia": "14 mm", "desc": "Chân ngắn, chấu thấp", "imgs": ["bugi-a6tc-2.jpg", "bugi-a6tc-1.jpg", "bugi-a6tc-3.jpg", "bugi-a6tc-4.jpg", "bugi-a6tc-5.jpg", "bugi-a6tc-0.jpg"], "models": [{"brand": "Honda", "name": "Dream", "year": "–"}, {"brand": "Honda", "name": "Dream II", "year": "–"}, {"brand": "Honda", "name": "Future", "year": "–"}, {"brand": "Honda", "name": "Super Dream", "year": "1997–2017"}, {"brand": "Honda", "name": "Wave 100 / Alpha / RSX Sport/S", "year": "–"}, {"brand": "Yamaha", "name": "Acruzo", "year": "2015.1-"}, {"brand": "Yamaha", "name": "Grande", "year": "2014.07-"}, {"brand": "Yamaha", "name": "Janus", "year": "2016.9-"}, {"brand": "Yamaha", "name": "Jupiter", "year": "2001–2016.12"}, {"brand": "Yamaha", "name": "Sirius", "year": "–"}, {"brand": "Yamaha", "name": "Sirius Fi", "year": "–"}, {"brand": "Suzuki", "name": "Axelo", "year": "2012–"}, {"brand": "Suzuki", "name": "GD110", "year": "2017–"}, {"brand": "Suzuki", "name": "Hayate", "year": "2009–"}, {"brand": "Suzuki", "name": "Hayate Fi", "year": "2011–"}, {"brand": "Suzuki", "name": "Impulse Fi", "year": "2017–"}, {"brand": "SYM", "name": "Abela", "year": "2018–"}, {"brand": "SYM", "name": "Angel", "year": "2018–"}, {"brand": "SYM", "name": "Fancy EFI (ABS)", "year": "2017–"}, {"brand": "SYM", "name": "Fancy EFI (tiêu chuẩn)", "year": "2017–"}, {"brand": "SYM", "name": "Shark Mini EFI", "year": "2016–"}]}, {"code": "B8RTC", "oem": "F01A027014HD0", "len": "19 mm", "dia": "10 mm", "desc": "Chân dài, chấu cao", "imgs": ["bugi-b8rtc.jpg"], "models": [{"brand": "Honda", "name": "AIRBLADE", "year": "2012–"}, {"brand": "Honda", "name": "AIRBLADE (REPSOL/SPORT)", "year": "2009–2011"}, {"brand": "Honda", "name": "BLADE", "year": "2014–"}, {"brand": "Honda", "name": "FUTURE II/NEO/NEO FI", "year": "2004–"}, {"brand": "Honda", "name": "LEAD", "year": "2013–"}, {"brand": "Honda", "name": "MSX 125", "year": "2014–"}, {"brand": "Honda", "name": "PCX", "year": "2010–2018.01"}, {"brand": "Honda", "name": "SH 125–150", "year": "2012.06–2016"}, {"brand": "Honda", "name": "SH MODE", "year": "2013–"}, {"brand": "Honda", "name": "SUPER DREAM", "year": "2013–2017"}, {"brand": "Honda", "name": "WAVE ALPHA/RSX/RSX AT/S", "year": "2009–"}, {"brand": "Suzuki", "name": "ADDRESS Fi", "year": "2016–"}, {"brand": "Suzuki", "name": "VIVA FI", "year": "2013–"}]}], "curoa": [{"n": 1, "code": "K02-901", "models": "SH150 VIET", "year": "2017-2019", "cc": "150 cc", "size": "935", "img": "curoa-1.jpg", "imgs": ["curoa-1.jpg"]}, {"n": 2, "code": "KZR-6010", "models": "AIR BLADE 125 (2013-2015) / LEAD 125 (2013-2021) / CLICK 125 / SH MODE 125 (2013-2019) / PCX 125 (2010-2013)", "year": "2013-2015", "cc": "125 cc", "size": "832", "img": "curoa-2.jpg", "imgs": ["curoa-2.jpg", "curoa-2-b.jpg", "curoa-2-c.jpg", "curoa-2-d.jpg"]}, {"n": 3, "code": "K35-V010", "models": "AIR BLADE 125 (2016 - 2022)/ VARIO 125 (2015 -2023)/ PCX 125 (2014-2017)", "year": "2016-2022", "cc": "125-150 cc", "size": "841", "img": "curoa-3.jpg", "imgs": ["curoa-3.jpg", "curoa-3-b.jpg"]}, {"n": 4, "code": "KVB-9010", "models": "CLICK 110 (2008) / AIR BLADE 110 (2007 -2012) / VARIO 110", "year": "2007-2012", "cc": "110 cc", "size": "803", "img": "curoa-4.jpg", "imgs": ["curoa-4.jpg", "curoa-4-b.jpg"]}, {"n": 5, "code": "5TL-LMBL-01", "models": "MIO 115 / JENUS / NOUVO S CU", "year": "", "cc": "115 cc", "size": "842", "img": "curoa-5.jpg", "imgs": ["curoa-5.jpg", "curoa-5-b.jpg"]}, {"n": 6, "code": "2BM-LMBL-00", "models": "NOZZA GRAND / FILANO 125 / FREEGO", "year": "", "cc": "125 cc", "size": "758", "img": "curoa-6.jpg", "imgs": ["curoa-6.jpg"]}, {"n": 7, "code": "52B-LMBL-00", "models": "NOZZA", "year": "", "cc": "115 cc", "size": "729", "img": "curoa-7.jpg", "imgs": ["curoa-7.jpg"]}, {"n": 8, "code": "GFM-9010", "models": "SCR 110 / LEAD 110", "year": "", "cc": "110 cc", "size": "751", "img": "curoa-8.jpg", "imgs": ["curoa-8.jpg"]}, {"n": 9, "code": "K3A-V01", "models": "SH MODE (2024) / AIR BLADE 125 4VAL (2022+)", "year": "2023-2026", "cc": "125 cc", "size": "865", "img": "curoa-9.jpg", "imgs": ["curoa-9.jpg", "curoa-9-b.jpg"]}, {"n": 10, "code": "K1N-V01", "models": "SH MODE 125 / LEAD 125 4 val", "year": "2021-2023 (SH MODE); 2022+ (LEAD)", "cc": "125 cc", "size": "866", "img": "curoa-10.jpg", "imgs": ["curoa-10.jpg", "curoa-10-b.jpg"]}, {"n": 11, "code": "K01-9010", "models": "SH 125", "year": "2013-2019", "cc": "125-150 cc", "size": "834", "img": "curoa-11.jpg", "imgs": ["curoa-11.jpg"]}, {"n": 12, "code": "K0S-D01", "models": "SH 125/ 150", "year": "2020-2022", "cc": "150 cc", "size": "950", "img": "curoa-12.jpg", "imgs": ["curoa-12.jpg"]}, {"n": 13, "code": "K1B-T02", "models": "SH350i / FORZA 350i", "year": "2021-2023", "cc": "350 cc", "size": "1062", "img": "curoa-13.jpg", "imgs": ["curoa-13.jpg"]}, {"n": 14, "code": "K36-J010", "models": "Air Blade 150 (2020 - 2022) /VARIO 150 (2015 - 2022) / PCX 150 ( 2013 - 2017)", "year": "2018+", "cc": "150 cc", "size": "841", "img": "curoa-14.jpg", "imgs": ["curoa-14.jpg"]}, {"n": 15, "code": "K2S-N010", "models": "VARIO 160 (2022+)", "year": "2022+", "cc": "160 cc", "size": "865", "img": "curoa-15.jpg", "imgs": ["curoa-15.jpg"]}, {"n": 16, "code": "K44-V010", "models": "VISION", "year": "2014-2020", "cc": "110 cc", "size": "812", "img": "curoa-16.jpg", "imgs": ["curoa-16.jpg"]}, {"n": 17, "code": "K0JA-N010 hoặc K2C", "models": "VISION", "year": "2021-2022", "cc": "110 cc", "size": "816", "img": "curoa-17.jpg", "imgs": ["curoa-17.jpg"]}, {"n": 18, "code": "KZL-9310", "models": "VISION 110", "year": "đời trước 2014", "cc": "110 cc", "size": "795", "img": "curoa-18.jpg", "imgs": ["curoa-18.jpg"]}], "loc": [{"n": 1, "code": "KVB", "models": "AIR BLADE 110 / CLICK 110", "year": "", "cc": "110 cc", "type": "Lọc bụi, lọc khí động cơ", "part": "17210-KVB-901", "img": "loc-1.jpg"}, {"n": 2, "code": "KPH", "models": "WAVE 100 / WAVE RS / FUTURE NEO", "year": "Tùy phiên bản", "cc": "100–125 cc", "type": "Lọc bụi, lọc khí động cơ", "part": "17210-KPH-900", "img": "loc-2.jpg"}, {"n": 3, "code": "KWN", "models": "PCX 125", "year": "2010–2013", "cc": "125 cc", "type": "Lọc bụi, lọc khí động cơ", "part": "17210-KWN-900", "img": "loc-3.jpg"}, {"n": 4, "code": "K16", "models": "SCOOPY 110", "year": "2017–2020", "cc": "110 cc", "type": "Lọc bụi, lọc khí động cơ", "part": "17210-K16-900", "img": "loc-4.jpg"}, {"n": 5, "code": "K01", "models": "SH 125 / SH 150", "year": "2009–2016", "cc": "125–150 cc", "type": "Lọc bụi, lọc khí động cơ", "part": "17220-K01-900", "img": "loc-5.jpg"}, {"n": 6, "code": "K29", "models": "SH MODE 125 / AIR BLADE 125 / AIR BLADE 150", "year": "SH MODE: 2013–2018; AIR BLADE 125: 2015–2019 và 2020+; AIR BLADE 150: 2020+", "cc": "125–150 cc", "type": "Lọc bụi, lọc khí động cơ", "part": "17210-K29-900", "img": "loc-6.jpg"}], "nhong": [{"name": "SIRIUS", "size": "428", "nhong": "15", "dia": "36"}, {"name": "SIRIUS-FI", "size": "428", "nhong": "15", "dia": "41"}, {"name": "FUTURE-FI", "size": "428", "nhong": "14", "dia": "36"}, {"name": "WAVE RS - TQ", "size": "428", "nhong": "14", "dia": "36"}, {"name": "WAVE RS - NHAT", "size": "428", "nhong": "14", "dia": "36"}, {"name": "DREAM", "size": "428", "nhong": "14", "dia": "36"}, {"name": "FUTURE", "size": "428", "nhong": "14", "dia": "36"}, {"name": "EXCITER 135 (10 li)", "size": "428H", "nhong": "14", "dia": "39"}, {"name": "FUTURE-FI (10 li)", "size": "428H", "nhong": "14", "dia": "39"}, {"name": "EXCITER 150 (10 li)", "size": "428H", "nhong": "14", "dia": "42"}, {"name": "WINNER (10 li)", "size": "428H", "nhong": "15", "dia": "44"}, {"name": "G2-EXCITER 135(Gold)", "size": "428H", "nhong": "14", "dia": "39"}, {"name": "G2-EXCITER 150(Gold)", "size": "428H", "nhong": "14", "dia": "42"}, {"name": "G2-WINNER(Gold)", "size": "428H", "nhong": "15", "dia": "44"}], "nhong_imgs": ["nhong-1.jpg", "nhong-2.jpg", "nhong-3.jpg", "nhong-4.jpg", "nhong-5.jpg", "nhong-6.jpg"], "coi": [{"name": "Còi đĩa Bosch", "sku": "0986AH0712HD6", "imgs": ["coi-1.jpg", "coi-2.jpg"]}]};
+const ADDRESS = "42 Hà Huy Giáp, Phường An Phú Đông, Thành phố Hồ Chí Minh";
+const IMG = "img/p/";
+const $ = (s, r) => (r || document).querySelector(s);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
+const CATS = {
+  bugi:  { label: "Bugi",           kind: "Bugi Bosch Start" },
+  curoa: { label: "Dây curoa",      kind: "Dây curoa Lucas" },
+  loc:   { label: "Lọc gió",        kind: "Lọc gió Lucas" },
+  nhong: { label: "Nhông sên dĩa",  kind: "Nhông sên dĩa YBN" },
+  coi:   { label: "Còi",            kind: "Còi Bosch" }
+};
+const ICON = {
+  bugi:  '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="38" y="6" width="24" height="16"/><rect x="34" y="22" width="32" height="26"/><path d="M42 48v22h16V48M50 70v18M42 88h16"/></svg>',
+  nhong: '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="8"/><path d="M50 14v10M50 76v10M14 50h10M76 50h10M25 25l7 7M68 68l7 7M75 25l-7 7M32 68l-7 7"/></svg>',
+  coi:   '<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 40h14l24-16v52L34 60H20z"/><path d="M68 36c8 8 8 20 0 28M76 28c13 13 13 31 0 44"/></svg>'
+};
+
+/* ---- Build product list from DATA ---- */
+const P = [];
+DATA.bugi.forEach(b => P.push({
+  id: "bugi-" + b.code, cat: "bugi", code: b.code, title: b.code, kind: CATS.bugi.kind,
+  sub: b.desc + ". Mã OEM " + b.oem + ".", img: b.imgs[0], tags: ["Ren " + b.len.replace(/ \(.*\)/, ""), "Ø " + b.dia, b.models.length + " dòng xe"], data: b
+}));
+DATA.curoa.forEach(c => P.push({
+  id: "curoa-" + c.n, cat: "curoa", code: c.code, title: c.code, kind: CATS.curoa.kind,
+  sub: c.models, img: c.img, tags: [c.cc, c.size ? "Chu vi " + c.size + " mm" : ""].filter(Boolean), data: c
+}));
+DATA.loc.forEach(l => P.push({
+  id: "loc-" + l.n, cat: "loc", code: l.code, title: l.code, kind: CATS.loc.kind,
+  sub: l.models, img: l.img, tags: [l.cc, l.part].filter(Boolean), data: l
+}));
+P.push({
+  id: "nhong-all", cat: "nhong", code: "YBN", title: "Bộ nhông sên dĩa", kind: CATS.nhong.kind,
+  sub: DATA.nhong.length + " bộ cho Sirius, Wave RS, Dream, Future, Exciter, Winner và các dòng xe số khác.",
+  img: DATA.nhong_imgs[0], tags: ["Sên 428 / 428H", DATA.nhong.length + " bộ"], data: { sets: DATA.nhong, imgs: DATA.nhong_imgs }
+});
+DATA.coi.forEach((c, i) => P.push({
+  id: "coi-" + i, cat: "coi", code: c.sku, title: c.name, kind: CATS.coi.kind,
+  sub: "Mã hàng " + c.sku, img: c.imgs[0], tags: ["Bosch"], data: c
+}));
+const byId = {}; P.forEach(p => byId[p.id] = p);
+
+/* ---- Catalog grid ---- */
+function cardHTML(p) {
+  const media = p.img
+    ? '<img src="' + IMG + esc(p.img) + '" alt="' + esc(p.kind + " " + p.title) + '" loading="lazy" width="720" height="960">'
+    : '<div class="ph">' + (ICON[p.cat] || ICON.bugi) + '<span>Ảnh sản phẩm<br>sắp cập nhật</span></div>';
+  const tag = p.cat === "bugi" ? "Bosch" : (p.cat === "nhong" ? "YBN" : (p.cat === "coi" ? "Bosch" : "Lucas"));
+  return '<article class="card" data-c="' + p.cat + '">' +
+    '<button class="thumb" type="button" data-open="' + p.id + '" aria-label="Xem chi tiết ' + esc(p.kind + " " + p.title) + '">' + media + '<span class="tag' + (p.cat === "bugi" ? " red" : "") + '">' + tag + '</span></button>' +
+    '<span class="kind" style="margin-top:12px">' + esc(p.kind) + '</span>' +
+    '<h3 style="margin-top:2px">' + esc(p.title) + '</h3>' +
+    '<p class="sub">' + esc(p.sub) + '</p>' +
+    '<div class="chips">' + p.tags.map(t => '<span>' + esc(t) + '</span>').join("") + '</div>' +
+    '<div class="row"><button type="button" data-open="' + p.id + '">Chi tiết</button><a href="#lien-he" data-quote="' + p.id + '">Báo giá</a></div>' +
+    '</article>';
+}
+$("#grid").innerHTML = P.map(cardHTML).join("");
+const tabsEl = $("#tabs");
+tabsEl.innerHTML = '<button class="tab" data-f="all" aria-pressed="true">Tất cả (' + P.length + ')</button>' +
+  Object.keys(CATS).map(k => '<button class="tab" data-f="' + k + '" aria-pressed="false">' + CATS[k].label + " (" + P.filter(p => p.cat === k).length + ")</button>").join("");
+function filter(f) {
+  tabsEl.querySelectorAll(".tab").forEach(t => t.setAttribute("aria-pressed", t.dataset.f === f));
+  document.querySelectorAll("#grid .card").forEach(c => c.classList.toggle("hide", f !== "all" && c.dataset.c !== f));
+  $("#cmp").style.display = (f === "all" || f === "bugi") ? "" : "none";
+}
+tabsEl.addEventListener("click", e => { const t = e.target.closest(".tab"); if (t) filter(t.dataset.f); });
+document.querySelectorAll("[data-go]").forEach(a => a.addEventListener("click", () => filter(a.dataset.go)));
+
+/* ---- Modal ---- */
+const modal = $("#modal"), mbox = $("#mbox");
+let lastFocus = null;
+function specRows(rows) {
+  return '<dl class="spec">' + rows.filter(r => r[1]).map(r => '<dt>' + esc(r[0]) + '</dt><dd>' + esc(r[1]) + '</dd>').join("") + '</dl>';
+}
+function openModal(id) {
+  const p = byId[id]; if (!p) return;
+  lastFocus = document.activeElement;
+  const d = p.data;
+  let imgs = [];
+  if (d.imgs && d.imgs.length) imgs = d.imgs; else if (p.img) imgs = [p.img];
+  let body = '<span class="kind">' + esc(p.kind) + '</span><h2>' + esc(p.title) + '</h2>';
+  if (p.cat === "bugi") {
+    body += specRows([["Mã sản phẩm", d.code], ["Mã OEM", d.oem], ["Chiều dài ren", d.len], ["Đường kính ren", d.dia], ["Kiểu", d.desc]]);
+    const groups = {};
+    d.models.forEach(m => (groups[m.brand] = groups[m.brand] || []).push(m));
+    body += '<h4>Dòng xe tương thích (' + d.models.length + ')</h4><div class="ctable"><table><thead><tr><th>Hãng</th><th>Dòng xe</th><th>Đời xe</th></tr></thead><tbody>' +
+      d.models.map(m => '<tr><td>' + esc(m.brand) + '</td><td>' + esc(m.name) + '</td><td>' + esc(m.year) + '</td></tr>').join("") + '</tbody></table></div>';
+  } else if (p.cat === "curoa") {
+    body += specRows([["Mã OEM", d.code], ["Dòng xe", d.models], ["Đời xe", d.year], ["Dung tích", d.cc], ["Chu vi ngoài", d.size ? d.size + " mm" : ""], ["Vị trí sử dụng", "Hệ thống truyền động CVT"]]);
+  } else if (p.cat === "loc") {
+    body += specRows([["Mã", d.code], ["Part number", d.part], ["Dòng xe", d.models], ["Đời xe", d.year], ["Dung tích", d.cc], ["Loại lọc", d.type], ["Vị trí lắp", "Hộp lọc gió / đường nạp"]]);
+  } else if (p.cat === "nhong") {
+    body += specRows([["Thương hiệu", "YBN (YABAN)"], ["Số bộ", d.sets.length + " bộ"]]);
+    body += '<h4>Danh sách bộ nhông sên dĩa</h4><div class="ctable"><table><thead><tr><th>Dòng xe / mã</th><th>Sên</th><th>Nhông</th><th>Dĩa</th></tr></thead><tbody>' +
+      d.sets.map(s => '<tr><td>' + esc(s.name) + '</td><td>' + esc(s.size) + '</td><td>' + esc(s.nhong) + 'T</td><td>' + esc(s.dia) + 'T</td></tr>').join("") + '</tbody></table></div>';
+  } else {
+    body += specRows([["Sản phẩm", d.name], ["Mã hàng", d.sku]]);
+  }
+  body += '<div class="mact"><a class="btn" href="#lien-he" data-quote="' + p.id + '">Gửi yêu cầu báo giá</a><a class="btn line" href="tel:0909611148">Gọi 0909 611 148</a></div>';
+  const media = imgs.length
+    ? '<div class="mmain"><img id="mmainimg" src="' + IMG + esc(imgs[0]) + '" alt="' + esc(p.kind + " " + p.title) + '"></div>' +
+      (imgs.length > 1 ? '<div class="mthumbs">' + imgs.map((im, i) => '<button type="button" data-im="' + esc(im) + '" aria-label="Ảnh ' + (i + 1) + '"' + (i === 0 ? ' aria-current="true"' : '') + '><img src="' + IMG + esc(im) + '" alt=""></button>').join("") + '</div>' : '')
+    : '<div class="mmain" style="display:grid;place-items:center;color:#7b88a6">' + (ICON[p.cat] || ICON.bugi).replace('<svg', '<svg width="120" height="120"') + '</div><p style="font-size:13px;color:#5a6579;margin-top:10px;text-align:center">Ảnh sản phẩm sắp cập nhật</p>';
+  mbox.innerHTML = '<button class="mclose" type="button" aria-label="Đóng" id="mclose">&times;</button><div class="mmedia">' + media + '</div><div class="mbody">' + body + '</div>';
+  modal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  $("#mclose").focus();
+}
+function closeModal() {
+  modal.classList.remove("open");
+  document.body.style.overflow = "";
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+modal.addEventListener("click", e => {
+  if (e.target === modal || e.target.id === "mclose") return closeModal();
+  const th = e.target.closest("[data-im]");
+  if (th) {
+    $("#mmainimg").src = IMG + th.dataset.im;
+    mbox.querySelectorAll("[data-im]").forEach(b => b.removeAttribute("aria-current"));
+    th.setAttribute("aria-current", "true");
+    return;
+  }
+  const q = e.target.closest("[data-quote]");
+  if (q) { prefill(q.dataset.quote); closeModal(); }
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape" && modal.classList.contains("open")) closeModal(); });
+document.addEventListener("click", e => {
+  const o = e.target.closest("[data-open]");
+  if (o) openModal(o.dataset.open);
+  const q = e.target.closest("#grid [data-quote], #results [data-quote]");
+  if (q) prefill(q.dataset.quote);
+});
+function prefill(id) {
+  const p = byId[id]; if (!p) return;
+  const map = { bugi: "Bugi Bosch", curoa: "Dây curoa Lucas", loc: "Lọc gió Lucas", nhong: "Nhông sên dĩa YBN", coi: "Còi Bosch" };
+  $("#f-item").value = map[p.cat];
+  $("#f-note").value = p.kind + " " + p.title + (p.cat === "curoa" || p.cat === "loc" ? " (" + p.sub + ")" : "") + ", số lượng: ";
+}
+
+/* ---- Vehicle finder ---- */
+const IDX = [];
+DATA.bugi.forEach(b => b.models.forEach(m => IDX.push({ id: "bugi-" + b.code, cat: "bugi", t: norm(m.brand + " " + m.name + " " + m.year), label: m.brand + " " + m.name + (m.year && m.year !== "–" ? " " + m.year : "") })));
+DATA.curoa.forEach(c => c.models.split("/").forEach(m => IDX.push({ id: "curoa-" + c.n, cat: "curoa", t: norm(m), label: m.trim() + (c.year ? " · " + c.year : "") })));
+DATA.loc.forEach(l => l.models.split("/").forEach(m => IDX.push({ id: "loc-" + l.n, cat: "loc", t: norm(m), label: m.trim() + (l.year ? " · " + l.year : "") })));
+DATA.nhong.forEach(n => IDX.push({ id: "nhong-all", cat: "nhong", code: n.name, t: norm(n.name), label: "Sên " + n.size + " · Nhông " + n.nhong + "T · Dĩa " + n.dia + "T" }));
+const resEl = $("#results");
+function search(q) {
+  const toks = norm(q).split(" ").filter(Boolean);
+  if (!toks.length) { resEl.innerHTML = ""; return; }
+  const hits = {};
+  IDX.forEach(e => {
+    if (toks.every(t => e.t.includes(t))) { (hits[e.cat] = hits[e.cat] || []).push(e); }
+  });
+  const cats = Object.keys(CATS).filter(c => hits[c]);
+  if (!cats.length) {
+    resEl.innerHTML = '<div class="empty">Chưa tìm thấy "' + esc(q) + '". Thử tên ngắn hơn (ví dụ "SH", "Vision") hoặc gọi 0909 611 148 để được tư vấn.</div>';
+    return;
+  }
+  resEl.innerHTML = cats.map(c => {
+    const seen = new Set(), items = [];
+    hits[c].forEach(e => { const k = e.id + "|" + e.label; if (!seen.has(k)) { seen.add(k); items.push(e); } });
+    return '<div class="rgroup"><h3>' + esc(CATS[c].kind) + '</h3><div class="rlist">' +
+      items.slice(0, 12).map(e => '<button type="button" class="rchip" data-open="' + e.id + '"><b>' + esc(e.code || byId[e.id].code) + '</b><span>' + esc(e.label) + '</span></button>').join("") +
+      '</div></div>';
+  }).join("");
+}
+const qEl = $("#q");
+qEl.addEventListener("input", () => search(qEl.value));
+$("#sform").addEventListener("submit", () => search(qEl.value));
+document.querySelectorAll(".eg [data-q]").forEach(b => b.addEventListener("click", () => { qEl.value = b.dataset.q; search(b.dataset.q); }));
+
+/* ---- Menu ---- */
+const burger = $("#burger"), nav = $("#nav");
+burger.addEventListener("click", () => { const o = nav.classList.toggle("open"); burger.setAttribute("aria-expanded", o); });
+nav.addEventListener("click", e => { if (e.target.closest("a")) nav.classList.remove("open"); });
+
+/* ---- Map ---- */
+(function () {
+  const box = $("#mapBox");
+  const enc = encodeURIComponent(ADDRESS);
+  const open = "https://www.google.com/maps/search/?api=1&query=" + enc;
+  const dir = "https://www.google.com/maps/dir/?api=1&destination=" + enc;
+  let top = false;
+  try { top = window.self === window.top; } catch (e) { top = false; }
+  if (top) {
+    box.innerHTML = '<iframe title="Bản đồ Thành Phong" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=' + enc + '&output=embed"></iframe>';
+  } else {
+    box.innerHTML = '<div class="mapfall"><b>' + esc(ADDRESS) + '</b><span>Bản đồ nhúng hiện khi trang chạy trên website chính thức.</span><div class="btns" style="margin:0"><a class="btn navy" href="' + open + '" target="_blank" rel="noopener">Mở Google Maps</a><a class="btn line" href="' + dir + '" target="_blank" rel="noopener">Chỉ đường</a></div></div>';
+  }
+})();
+
+/* ---- Số liệu ---- */
+$("#statCodes").textContent = DATA.bugi.length + DATA.curoa.length + DATA.loc.length + DATA.nhong.length + DATA.coi.length;
+
+/* Lượt truy cập: đếm 1 lần cho mỗi phiên trình duyệt qua dịch vụ counterapi.dev.
+   Chỉ chạy được khi trang nằm trên website chính thức; trong bản xem trước sẽ hiện dấu gạch. */
+(function () {
+  const el = $("#statVisits");
+  const base = "https://api.counterapi.dev/v1/phutungthanhphong/visits";
+  let counted = false;
+  try { counted = sessionStorage.getItem("tp_visit") === "1"; } catch (e) {}
+  fetch(counted ? base : base + "/up")
+    .then(r => r.json())
+    .then(j => {
+      if (typeof j.count === "number") {
+        el.textContent = j.count.toLocaleString("vi-VN");
+        try { sessionStorage.setItem("tp_visit", "1"); } catch (e) {}
+      }
+    })
+    .catch(() => {});
+})();
+
+/* ---- Quote form (chưa gửi thư, tạo nội dung để gọi hoặc email) ---- */
+(function () {
+  const form = $("#quote"), out = $("#formOut"), msg = $("#formMsg");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    const n = form.name.value.trim(), p = form.phone.value.trim();
+    msg.style.display = "block";
+    if (!n || !p) { msg.textContent = "Vui lòng nhập họ tên và số điện thoại."; return; }
+    const text = "Yêu cầu báo giá\nHọ tên: " + n + "\nĐiện thoại: " + p + "\nSản phẩm: " + form.item.value + "\nChi tiết: " + (form.note.value.trim() || "(chưa ghi)");
+    out.style.display = "block"; out.textContent = text;
+    msg.textContent = "Nội dung đã sẵn sàng. Gửi qua hotline 0909 611 148 hoặc email phutungxemaythanhphong42@gmail.com.";
+    try { navigator.clipboard.writeText(text).then(() => { msg.textContent += " Đã sao chép nội dung."; }).catch(() => {}); } catch (err) {}
+  });
+})();
+</script>
 </body>
 </html>
