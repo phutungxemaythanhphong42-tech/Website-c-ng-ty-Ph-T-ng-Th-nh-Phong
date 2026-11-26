@@ -59,11 +59,11 @@ nav a.top:hover{color:var(--red);border-bottom-color:var(--red)}
 
 .hero{background:var(--navy-deep);color:#fff;position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;right:-8%;top:-30%;width:62%;height:160%;background:linear-gradient(115deg,transparent 0 44%,rgba(211,32,43,.9) 44% 49%,transparent 49% 53%,rgba(23,58,140,.9) 53% 100%);opacity:.55;pointer-events:none}
-.hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:52px;padding-bottom:52px}
+.hero-in{position:relative;display:grid;grid-template-columns:1fr;gap:44px;align-items:center;padding-top:52px;padding-bottom:44px}
 .hero .eyebrow{color:#ffb9bd}
-.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(46px,6.4vw,84px);margin:12px 0 18px}
+.hero h1{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(26px,3.7vw,50px);margin:12px 0 16px;line-height:1.1}
 .hero h1 em{font-style:normal;color:#ff5a63}
-.hero p{color:#cdd6ec;max-width:48ch;font-size:16.5px}
+.hero p{color:#cdd6ec;max-width:60ch;font-size:16.5px}
 .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-block;padding:14px 26px;font-weight:700;font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;border:2px solid var(--red);background:var(--red);color:#fff;transition:.15s;text-align:center}
 .btn:hover{background:var(--red-dark);border-color:var(--red-dark)}
@@ -76,6 +76,20 @@ nav a.top:hover{color:var(--red);border-bottom-color:var(--red)}
 .stats{display:flex;gap:34px;margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);flex-wrap:wrap}
 .stats b{display:block;font-family:var(--display);font-size:40px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
 .stats span{font-size:12px;color:#a9b7de;text-transform:uppercase;letter-spacing:.09em}
+
+.certs.strip{padding:30px 0 34px}
+.certs.strip .sec-head{margin-bottom:16px}
+.certs.strip .sec-head h2{font-size:clamp(22px,2.6vw,30px)}
+.certs.strip .cgrid{grid-template-columns:repeat(3,1fr);gap:14px}
+.certs.strip .cert{display:grid;grid-template-columns:108px 1fr;grid-template-rows:auto 1fr auto;column-gap:16px;row-gap:6px;align-items:start;padding:16px 18px}
+.certs.strip .cert .lg{grid-row:1/4;align-self:center}
+.certs.strip .cert .lg{height:auto}
+.certs.strip .cert .lg img{max-height:54px;max-width:108px}
+.certs.strip .cert h3{font-size:16px;margin:0}
+.certs.strip .cert p{font-size:12.5px;line-height:1.5;margin:0}
+.certs.strip .cert .until{justify-self:start;margin-top:6px;font-size:12px;padding:5px 8px}
+.certs.strip .compatline{margin-top:14px;font-size:13.5px}
+@media(max-width:860px){.certs.strip .cgrid{grid-template-columns:1fr}}
 .collage{display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:1fr 1fr;gap:10px;height:500px}
 .collage figure{position:relative;overflow:hidden;background:#fff}
 .collage figure:first-child{grid-row:1/3}
@@ -315,7 +329,7 @@ dl.spec dd{font-weight:600}
   <div class="wrap hero-in">
     <div>
       <span class="eyebrow">Phụ tùng xe máy &amp; tay ga chính hãng</span>
-      <h1>Đúng mã.<br><em>Giá sỉ.</em><br>Giao toàn quốc.</h1>
+      <h1>Đúng mã. <em>Giá sỉ.</em> Giao toàn quốc.</h1>
       <p>Thành Phong phân phối bugi Bosch, dây curoa và lọc gió Lucas, nhông sên dĩa YBN cho cửa hàng, xưởng sửa chữa và khách lẻ. Có tem bảo hành, hỗ trợ đổi trả và tra đúng mã theo dòng xe.</p>
       <div class="btns">
         <a class="btn" href="#tra-ma">Tra mã theo xe</a>
@@ -327,11 +341,33 @@ dl.spec dd{font-weight:600}
         <div><b id="statVisits" title="Số lượt truy cập trang web">—</b><span>Lượt truy cập</span></div>
       </div>
     </div>
-    <div class="collage">
-      <figure><img data-im="p/curoa-2.jpg" alt="Dây curoa Lucas mã KZR-6010 và hộp" width="720" height="960"><figcaption>Lucas · Dây curoa</figcaption></figure>
-      <figure><img data-im="p/bugi-a6tc-2.jpg" alt="Bugi Bosch A6TC và hộp" width="720" height="960"><figcaption>Bosch · Bugi</figcaption></figure>
-      <figure><img data-im="p/loc-6.jpg" alt="Lọc gió Lucas mã K29" width="720" height="960"><figcaption>Lucas · Lọc gió</figcaption></figure>
+  </div>
+</section>
+
+<section class="certs strip" id="doi-tac">
+  <div class="wrap">
+    <div class="sec-head"><div><span class="eyebrow">Đối tác</span><h2>Được ủy quyền phân phối</h2></div></div>
+    <div class="cgrid">
+      <div class="cert">
+        <div class="lg"><img data-im="brand/bosch.png" alt="Logo Bosch"></div>
+        <h3>Bosch</h3>
+        <p>Được Công ty TNHH Hợp Thành Autoparts chứng nhận là đơn vị phân phối chính thức các sản phẩm phụ tùng của Bosch tại Việt Nam.</p>
+        <span class="until">Hiệu lực đến 31/12/2027</span>
+      </div>
+      <div class="cert">
+        <div class="lg"><img data-im="brand/lucas.png" alt="Logo Lucas"></div>
+        <h3>Lucas</h3>
+        <p>Đơn vị phân phối và bán lại được ủy quyền cấp 2 các sản phẩm phụ tùng xe máy thương hiệu LUCAS tại Việt Nam, theo ủy quyền của Guangzhou Zhicheng Import and Export Co., Ltd.</p>
+        <span class="until">Hiệu lực đến 31/12/2027</span>
+      </div>
+      <div class="cert">
+        <div class="lg"><img data-im="brand/ybn.png" alt="Logo YBN Yaban Chain"></div>
+        <h3>YBN (YABAN)</h3>
+        <p>Đơn vị phân phối và bán lại được ủy quyền cấp 1 các sản phẩm phụ tùng xe máy thương hiệu YABAN tại Việt Nam, ủy quyền trực tiếp từ Công ty TNHH Yaban Chain Industrial Việt Nam.</p>
+        <span class="until">Hiệu lực đến 31/12/2028</span>
+      </div>
     </div>
+    <p class="compatline"><b>Phù hợp các dòng xe:</b> Honda, Yamaha, Suzuki, SYM, Piaggio. Tra mã theo từng dòng xe ở mục <a href="#tra-ma" style="text-decoration:underline">Tra mã theo xe</a>.</p>
   </div>
 </section>
 
@@ -397,33 +433,6 @@ dl.spec dd{font-weight:600}
       </div>
     </div>
     <div class="grid" id="grid"></div>
-  </div>
-</section>
-
-<section class="sec certs" id="doi-tac">
-  <div class="wrap">
-    <div class="sec-head"><div><span class="eyebrow">Đối tác</span><h2>Được ủy quyền phân phối</h2></div></div>
-    <div class="cgrid">
-      <div class="cert">
-        <div class="lg"><img data-im="brand/bosch.png" alt="Logo Bosch"></div>
-        <h3>Bosch</h3>
-        <p>Được Công ty TNHH Hợp Thành Autoparts chứng nhận là đơn vị phân phối chính thức các sản phẩm phụ tùng của Bosch tại Việt Nam.</p>
-        <span class="until">Hiệu lực đến 31/12/2027</span>
-      </div>
-      <div class="cert">
-        <div class="lg"><img data-im="brand/lucas.png" alt="Logo Lucas"></div>
-        <h3>Lucas</h3>
-        <p>Đơn vị phân phối và bán lại được ủy quyền cấp 2 các sản phẩm phụ tùng xe máy thương hiệu LUCAS tại Việt Nam, theo ủy quyền của Guangzhou Zhicheng Import and Export Co., Ltd.</p>
-        <span class="until">Hiệu lực đến 31/12/2027</span>
-      </div>
-      <div class="cert">
-        <div class="lg"><img data-im="brand/ybn.png" alt="Logo YBN Yaban Chain"></div>
-        <h3>YBN (YABAN)</h3>
-        <p>Đơn vị phân phối và bán lại được ủy quyền cấp 1 các sản phẩm phụ tùng xe máy thương hiệu YABAN tại Việt Nam, ủy quyền trực tiếp từ Công ty TNHH Yaban Chain Industrial Việt Nam.</p>
-        <span class="until">Hiệu lực đến 31/12/2028</span>
-      </div>
-    </div>
-    <p class="compatline"><b>Phù hợp các dòng xe:</b> Honda, Yamaha, Suzuki, SYM, Piaggio. Tra mã theo từng dòng xe ở mục <a href="#tra-ma" style="text-decoration:underline">Tra mã theo xe</a>.</p>
   </div>
 </section>
 
