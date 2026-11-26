@@ -172,7 +172,9 @@ nav a.top:hover{color:var(--red);border-bottom-color:var(--red)}
 .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#7b88a6;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:16px}
 .ph svg{width:84px;height:84px}
 .tag{position:absolute;top:10px;left:10px;background:var(--navy-deep);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 8px}
-.tag.red{background:var(--red)}
+.tag.red,.tag.bosch{background:#d9162e}
+.tag.lucas{background:#2fa04f}
+.tag.ybn{background:#f4cf2a;color:#1b1b1b}
 .card h3{font-family:var(--display);font-size:26px;font-weight:700;margin-top:12px;color:var(--navy-deep);text-transform:uppercase;letter-spacing:.01em}
 .card .kind{font-size:12px;font-weight:600;color:var(--red);letter-spacing:.06em;text-transform:uppercase}
 .card .sub{font-size:13px;color:var(--muted);margin-top:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:60px}
@@ -588,7 +590,7 @@ function cardHTML(p) {
     : '<div class="ph">' + (ICON[p.cat] || ICON.bugi) + '<span>Ảnh sản phẩm<br>sắp cập nhật</span></div>';
   const tag = p.cat === "bugi" ? "Bosch" : (p.cat === "nhong" ? "YBN" : (p.cat === "coi" ? "Bosch" : "Lucas"));
   return '<article class="card" data-c="' + p.cat + '" data-open="' + p.id + '">' +
-    '<button class="thumb" type="button" data-open="' + p.id + '" aria-label="Xem chi tiết ' + esc(p.kind + " " + p.title) + '">' + media + '<span class="tag' + (p.cat === "bugi" ? " red" : "") + '">' + tag + '</span></button>' +
+    '<button class="thumb" type="button" data-open="' + p.id + '" aria-label="Xem chi tiết ' + esc(p.kind + " " + p.title) + '">' + media + '<span class="tag ' + tag.toLowerCase() + '">' + tag + '</span></button>' +
     '<span class="kind" style="margin-top:12px">' + esc(p.kind) + '</span>' +
     '<h3 style="margin-top:2px">' + esc(p.title) + '</h3>' +
     '<p class="sub">' + esc(p.sub) + '</p>' +
